@@ -10,11 +10,11 @@ import SwiftUI
 
 struct LandmarkDetail: View {
     
-    @EnvironmentObject var modelData: LandmarksMockData
+    @EnvironmentObject var landmarksMockData: LandmarksMockData
     var landmark: Landmark
     
     var landmarkIndex: Int {
-        modelData.landmarks.firstIndex (where: {
+        landmarksMockData.landmarks.firstIndex (where: {
             $0.id == landmark.id
         })!
     }
@@ -33,7 +33,7 @@ struct LandmarkDetail: View {
                 HStack {
                     Text(landmark.name)
                         .font(.title)
-                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
+                    FavoriteButton(isSet: $landmarksMockData.landmarks[landmarkIndex].isFavorite)
                 }
                 
                 HStack {
@@ -59,10 +59,10 @@ struct LandmarkDetail: View {
 
 struct LandmarkDetail_Previews: PreviewProvider {
     
-    static let modelData = LandmarksMockData()
+    static let landmarksMockData = LandmarksMockData()
     
     static var previews: some View {
-        LandmarkDetail(landmark: modelData.landmarks[0])
-            .environmentObject(modelData)
+        LandmarkDetail(landmark: landmarksMockData.landmarks[0])
+            .environmentObject(landmarksMockData)
     }
 }
