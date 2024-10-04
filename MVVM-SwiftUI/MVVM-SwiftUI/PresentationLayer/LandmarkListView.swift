@@ -12,7 +12,6 @@ struct LandmarkListView: View {
     
     var body: some View {
         ZStack {
-            NavigationView {
                 List(landmarkListViewModel.landmarks) { landmark in
                     LandmarkRow(landmark:landmark)
                 }
@@ -25,7 +24,6 @@ struct LandmarkListView: View {
             .alert(item: $landmarkListViewModel.alertData) { alertItem in
                 return Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
             }
-        }
     }
 }
 
