@@ -5,7 +5,6 @@
 //  Created by Nivedha Rajendran on 04.10.24.
 //
 import Foundation
-import SwiftUI
 
 struct Landmark: Hashable, Codable, Identifiable {
     
@@ -15,10 +14,5 @@ struct Landmark: Hashable, Codable, Identifiable {
     var state: String
     var description: String
     var isFavorite: Bool
-    
-    private var imageName: String
-    var image: Image {
-        Image(imageName)
-    }
-    
+    var imageName: String
 }
