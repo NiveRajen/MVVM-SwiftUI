@@ -16,7 +16,7 @@ struct LandmarkDetail: View {
     var landmarkIndex: Int {
         landmarksMockData.landmarks.firstIndex (where: {
             $0.id == landmark.id
-        })!
+        }) ?? 0
     }
     
     var body: some View {
