@@ -9,11 +9,13 @@ import SwiftUI
 
 @main
 struct MVVM_SwiftUIApp: App {
+    
+    @StateObject private var modelData = LandmarksMockData()
+    
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                LandmarkListView()
-            }
+            LandmarkListView()
+                .environmentObject(modelData)
         }
     }
 }

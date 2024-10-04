@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct LandmarksMockData {
+class LandmarksMockData: ObservableObject {
     
-    let landmarks: [Landmark] = MockData.load("landmarkData.json")
+    var landmarks: [Landmark] = MockData.load("landmarkData.json")
 }
